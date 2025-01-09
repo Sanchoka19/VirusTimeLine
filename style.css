@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+body,
+html {
+    font-family: sans-serif;
+}
+
+.timeline {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: url(./media/Ecx9bfe4C4DkXKJJVMUMK703czM.webp);
+    background-size: 300px;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-size: cover;
+}
+
+.timeline-wrapper{
+    min-width: 100vw;
+    height: 2px;
+    background-color: crimson;
+
+    position: relative;
+    display: flex;
+    /* gap: 350px; */
+    justify-content: space-around;
+    padding: 0 30px;
+}
+
+.timeline-card {
+    position: relative;
+}
+
+.timeline-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    z-index: 999;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+.timeline-card-hover {
+    position: relative;
+}
+
+.timeline-card-border{
+    height: 550px;
+    width: 80px;
+    border-bottom: 2px solid grey;
+    border-left: 2px solid grey;
+
+    position: absolute;
+    top: -320px;
+    left: 25px;
+    z-index: 1;
+}
+
+
+.timeline-card-content {
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    
+    top: -320px;
+    left: -150px;
+}
+
+.timeline-card-content p{
+    width: 150px;
+    font-size: 0.7rem;
+}
+
+.timeline-card-content h2{
+    width: 150px;
+}
+
+.timeline-card-content h1 {
+    position: absolute;
+    top: -70px;
+    left: 100px;
+}
+
+.timeline-card-border-top{
+    width: 8px;
+    height: 8px;
+    background-color: grey;
+    position: absolute; 
+    top: -5px;
+    right: 75px;
+    border-radius: 50%;
+}
+
+.timeline-card-hover img{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 100px; 
+    top: 230px;
+    border: 1px solid crimson;
+}
+
+.timeline-card:nth-child(even),
+.timeline-card:nth-child(even) .timeline-card-content{
+    transform: rotate(180deg) scale(-1, 1);
+}
+
+.timeline-card:nth-child(even) .main-img{
+    rotate: 180deg;
+    top: -50px;
+}
+
+.timeline-card:nth-child(even) .timeline-card-hover img {
+    rotate: 180deg;
+    top: 160px;
+}
+
+.timeline-card:nth-child(even) .timeline-card-hover .timeline-card-content h1{
+    top: 150px;
+}
+
+.timeline-card *:not(.main-img) {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+}
+
+.timeline-card:hover *:not(.main-img) {
+    visibility: visible;
+    opacity: 1;
+}
